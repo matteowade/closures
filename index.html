@@ -1,0 +1,40 @@
+<html>
+<head>
+</head>
+<body>
+
+<ul id="myList">
+	<li><a href="#">link 1</a></li>
+	<li><a href="#">link 2</a></li>
+	<li><a href="#">link 3</a></li>
+	<li><a href="#">link 4</a></li>
+	<li><a href="#">link 5</a></li>
+</ul>
+
+
+<script TYPE="text/javascript">
+
+
+(function() {
+
+	var myList = document.getElementById("myList"),
+		items = myList.getElementsByTagName("li");
+
+	for (var i = 0; i < items.length; i++) (function(val){
+
+		var newIndex = Number(val);
+		console.log(typeof newIndex);
+
+		items[newIndex].addEventListener('click', function() {
+			console.log("You clicked on link "+newIndex);
+		});
+
+	})(i);
+
+})();
+
+
+
+</script>
+</body>
+</html>
